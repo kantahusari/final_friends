@@ -1,0 +1,68 @@
+:root {
+  --orange: #ff6600;
+  --navy: #000066;
+  --navy_light: #333399;
+  --white: #ffffff;
+
+  --gray_light: #f5f5f5;
+  --gray: #777;
+  --gray_dark: #333;
+
+  --hue: 320; /* change me */
+  --bg: oklch(35% 0.3 var(--hue));
+  --text: oklch(85% 0.1 var(--hue));
+  --shadow: oklch(25% 0.2 var(--hue));
+  --highlight: oklch(98% 0.05 var(--hue));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+body {
+  line-height: 1.6;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(-45deg, var(--orange), var(--navy_light), var(--navy), var(--gray_dark));
+  background-size: 1000% 1000%;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
