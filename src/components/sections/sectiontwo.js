@@ -2,12 +2,16 @@ import React, { useEffect, useState, useRef, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { loadTabs } from "../store/storeslice";
+import { useNavigate } from "react-router-dom";
 export default function SectionTwo() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const tabs = useSelector((state) => state.tabs.tabs);
   const activeTab = useSelector((state) => state.tabs.activeTab);
   function handleNavigate(tab) {
-    dispatch(loadTabs({ activeTab: tab }));
+    // dispatch(loadTabs({ activeTab: tab }));
+    navigate(`/${tab === "Home" ? "Home" : tab === "Our Company" ? "About" : tab === "Services" ? "Services" : tab === "Gallery" ? "Gallery" : tab === "Contact Us" ? "Contact" : ""}`);
+
   }
   const testimonials = [
     {
